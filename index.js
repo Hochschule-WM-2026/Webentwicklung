@@ -1,9 +1,3 @@
-function openDrawer() {
-    document.getElementById("drawer").classList.add("open");
-    document.getElementById("overlay").classList.add("show");
-}
+import { drawer_toggle } from "./scripts/drawer_toggle";
 
-function closeDrawer() {
-    document.getElementById("drawer").classList.remove("open");
-    document.getElementById("overlay").classList.remove("show");
-}
+drawer_toggle();
