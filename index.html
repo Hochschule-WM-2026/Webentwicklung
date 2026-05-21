@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-   <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WM - 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/color_scheme.js"></script>
 </head>
+
 <body>
-   <nav class="navbar"> 
-      <a href="index.html">Home</a>
-      <a href="Spielpan.html">Spielpan</a>
-      <a href="Quiz.html">Quiz</a>
-      <a href=""></a> 
-   </nav>
-   
-   <div class="page" id="Start" >
-      Hallo
-   </div>
-   <div class="page" id="Start2">      
-      Hallo2
-   </div>
-   
+    <nav id="drawer">
+       <a href="/">Home</a>
+       <a href="">Tabellen</a>
+       <a href="">Kader</a>
+       <a href="">Quiz</a>
+    </nav>
+    <div id="overlay" onclick="closeDrawer()"></div>
+    <header>
+        <button onclick="openDrawer()">Drawer</button>
+        <h1>Wm - 2026</h1>
+    </header>
+    <script src="index.js"></script>
 </body>
-</html>
+</html>  
