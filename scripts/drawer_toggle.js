@@ -14,8 +14,8 @@ function closeDrawer() {
 }
 
 
-drawer_button.addEventListener("click", openDrawer());
-overlay.addEventListener("click", closeDrawer());
+drawer_button.addEventListener("click", openDrawer);
+overlay.addEventListener("click", closeDrawer);
 
 
 }
