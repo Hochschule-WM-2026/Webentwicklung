@@ -2,6 +2,8 @@
     --background: white;
     --text: black;
     --drawer-background: #f5f7fb;
+    --drawer-text: #1f2937;
+    --drawer-text-background: #eef2f8;
 }
 
 :root[data-theme="dark"] {
@@ -36,10 +38,13 @@ main{
     height: 100%;
 }
 
-header {
-    display: flex;
+#header {
     grid-row: 1;
     grid-column: 1/5;
+}
+
+header {
+    display: flex;
     background-color: red;
     justify-content: center;
     align-items: center;
@@ -66,17 +71,28 @@ h2{
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     z-index: 1000;
+}
 
-    a {
-        text-decoration: none;
-        color: #1f2937;
-        background-color: #eef2f8;
-        padding: 20px;
-        margin: 0 20px;
-        border-radius: 10px;
-        font-size: large;
-        font-weight: bold;
-    }
+#drawer a {
+    display: flex;
+    text-decoration: none;
+    color: var(--drawer-text);
+    background-color: var(--drawer-text-background);
+    padding: 20px;
+    margin: 0 20px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+#drawer a i {
+    width: 22px;
+    height: 22px;
+    stroke: var(--text);
+    flex-shrink: 0;
 }
 
 #overlay {

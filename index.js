@@ -1,9 +1,13 @@
-function openDrawer() {
-    document.getElementById("drawer").classList.add("open");
-    document.getElementById("overlay").classList.add("show");
-}
+import { drawer_toggle } from "./scripts/drawer_toggle.js";
 
-function closeDrawer() {
-    document.getElementById("drawer").classList.remove("open");
-    document.getElementById("overlay").classList.remove("show");
-}
+document.addEventListener("DOMContentLoaded", async () => {
+
+    const res = await fetch("./header.html");
+    const html = await res.text();
+
+    document.getElementById("header").innerHTML = html;
+
+    lucide.createIcons();
+
+    drawer_toggle();
+});
