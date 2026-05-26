@@ -20,14 +20,19 @@ html, body {
 body {
     font-family: Arial, Helvetica, sans-serif;
     display: grid;
-    grid-template-columns: 0% 100%;
-    grid-template-rows: 10% 80% 10%;
     min-height: 100vh;
     width: 100vw;
+    grid-template-columns: 0% 100%;
+    grid-template-rows: repeat(10, 10%);
     background-color: var(--background);
     color: var(--text);
     user-select: none;
-    margin: 0px;
+}
+
+.logo {
+    object-fit: contain;
+    object-position: center;
+    width: 70px;
 }
 
 main{
@@ -40,15 +45,28 @@ main{
 
 #header {
     grid-row: 1;
-    grid-column: 1/5;
+    grid-column: 1/3;
 }
 
 header {
     display: flex;
-    background-color: red;
-    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    filter: blur();
+    position: relative;
+    padding: 5px 20px;
+    justify-content: space-between;
     align-items: center;
+    z-index: 2;
 }
+
+#activeMenuText {
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    left: 50%;
+    right: 50%;
+}
+
 h1{
     margin: 0;
 }
@@ -71,6 +89,7 @@ h2{
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     z-index: 1000;
+    padding: 20px 0px;
 }
 
 #drawer a {
@@ -88,11 +107,53 @@ h2{
     gap: 10px;
 }
 
+#drawer a.active {
+    background: linear-gradient(to right, rgb(1, 70, 1) 30%, darkgoldenrod 80%);
+}
+
 #drawer a i {
     width: 22px;
     height: 22px;
     stroke: var(--text);
     flex-shrink: 0;
+}
+
+#drawer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#drawer button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkgoldenrod;
+    border: 1px solid rgba(50, 50, 50, 0.4);
+    background-color: transparent;
+}
+
+
+
+#drawer img {
+    width: 100px;
+}
+
+#drawer_button {
+    background-color: transparent;
+    border: solid 1px rgba(50, 50, 50, 0.4);
+    border-radius: 100%;
+    aspect-ratio: 1;
+}
+
+.drawer_icon {
+    color: darkgoldenrod;
 }
 
 #overlay {
@@ -109,6 +170,7 @@ h2{
 
 #drawer.open {
     left: 0px;
+
 }
 
 #overlay.show {
@@ -199,3 +261,114 @@ h2{
     width: 90vw;
     background-color: #dadada;;
 }
+
+.homeBody {
+    grid-column: 1/4;
+    grid-row: 1/10;
+    background: linear-gradient(
+  to bottom,
+  var(--background) 0%,
+  var(--background) 5%,
+  rgba(0,0,0,0) 35%,
+  rgba(0,0,0,0) 65%,
+  var(--background) 100%
+)
+    ,url('imgs/background.svg');
+    background-position: center 85%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;  
+}
+
+.homeBody div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+
+    width: 60%;
+
+    height: 40%;
+    aspect-ratio: 1/1;
+
+    border-radius: 100%;
+    overflow: hidden;
+
+    background:
+radial-gradient(
+    circle,
+    var(--background) 55%,
+    rgba(0,0,0,0.25) 80%,
+    transparent 100%
+);
+box-shadow:
+0 0 60px rgba(0,0,0,0.3);
+    box-shadow:
+0 0 40px rgba(0,0,0,0.35),
+0 0 80px rgba(0,0,0,0.25),
+0 0 120px rgba(0,0,0,0.15);
+
+}
+
+.homeBody div h2 {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.homeBody div h1 {
+    color: darkgoldenrod;
+    font-size: 60px;
+    margin-top: -10px;
+}
+
+.homeBody div h3 {
+    display: flex;
+    flex-direction: row;
+    margin-top: -20px;
+}
+
+.home_alt{
+}
+
+.homeFooter {
+    grid-column: 1/3;
+    grid-row: 9/11;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    column-gap: 20px;
+    border: solid 1px rgba(50,50,50,0.4);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0px;
+    margin: 30px 20px;
+
+}
+
+.homeFooter div {
+     width: 30%;
+}
+
+.homeFooter div h3 {
+    color: darkgoldenrod;
+    margin: 2px 0px;
+}
+
+.homeFooter div p {
+    margin: 2px 0px;
+}
+
+.homeFooterIcons {
+    color: darkgoldenrod;
+}
+
+.HomeTeamsView {
+    border-right: solid 1px rgba(50,50,50,0.4);
+    border-left: solid 1px rgba(50,50,50,0.4);
+} 
+

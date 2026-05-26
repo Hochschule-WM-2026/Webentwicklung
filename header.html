@@ -1,20 +1,24 @@
 <nav id="drawer">
-   <a href="/">
-      <i data-lucide="home"></i>
+   <div>
+      <button id="drawer_close_button"><i data-lucide="x"></i></button>
+      <img src="imgs/logo.svg">
+   </div>
+   <a href="/" data-menu="Home">
+      <i data-lucide="home" ></i>
       Home
    </a>
 
-   <a href="/Spielpan.html">
+   <a href="/Spielplan.html" data-menu="Tabelle">
       <i data-lucide="table"></i>
       Tabellen
    </a>
 
-   <a href="/Kader.html">
+   <a href="/Kader.html" data-menu="Kader">
       <i data-lucide="users"></i>
       Kader
    </a>
 
-   <a href="/Quiz.html">
+   <a href="/Quiz.html" data-menu="Quiz">
       <i data-lucide="puzzle"></i>
       Quiz  
    </a>
@@ -23,6 +27,7 @@
 <div id="overlay"></div>
 
 <header>
-    <button id="drawer_button">Drawer</button>
-    <h1>WM - 2026</h1>
+    <button id="drawer_button"><i class="drawer_icon" data-lucide="menu"></i></button>
+    <h3 id="activeMenuText">Home</h3>
+    <img src="imgs/logo.svg" class="logo">
 </header>
