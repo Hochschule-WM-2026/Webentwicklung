@@ -394,3 +394,40 @@ box-shadow:
   padding-left: 30px;
 }
 
+.quiz_aside{
+    display: flex;
+flex-direction: column;
+border: solid 3px white;
+border-radius: 15px;
+width: 500px;
+height: 500px;
+position: absolute;
+left: 43px;
+top: 250px;
+background-image: url("Copilot_20260527_114010.png");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
+}
+.h2_quiz{
+    color: darkgoldenrod;
+    text-align: center;
+}
+.h3_quiz{
+    text-align: center;
+    margin-top: 10px;
+}
+#quiz_p_aside{
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    border-bottom: solid 3px white;
+    border-radius: 5px;
+}
+.quiz_body{
+    background-image: url("Copilot_20260527_115547.png");
+    display: flex;
+}
