@@ -182,6 +182,42 @@ h2{
     visibility: visible;
 }
 
+.main-body{
+    grid-column: 1/4;
+    grid-row: 2/10;
+}
+
+/* Spielplan*/
+
+.gameplan-body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.game-selection{
+    appearance: none;
+    
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin-top: 6%;
+
+
+    background-color: transparent;
+    border: 0px;
+
+    color: #dadada;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
+
+.game-selection:focus{
+    border: 1px red;
+    outline: 1px red;
+}
+
 .group{
     display: flex;
     flex-direction: column;
