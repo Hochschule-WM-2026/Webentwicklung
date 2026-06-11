@@ -7,3 +7,4 @@ function setTheme(x) {
 const media = window.matchMedia("(prefers-color-scheme: dark)");
 setTheme(media);
 media.addEventListener("change", setTheme);
+

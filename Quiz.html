@@ -11,19 +11,19 @@
 </head>
 <body>
    <div id="header"></div>
-   <script type="module" src="index.js"></script>
-    <div class="quiz_body">
-        <h2 style="color:darkgreen">FIFA <span style="color: #D4AF37;">2026</span></h2>
-        <p>Test your knowledge about the FIFA World Cup 2026 with our interactive quiz!</p>
-        <article>
-            <h8 style="color: #010d01;">How many teams will participate in the FIFA World Cup 2026?</h8>
-            <button id="option1">5</button>
-            <button id="option2">3</button>
-            <button id="option3">1</button>
-            <button id="option4">6</button>
-        </article>
-    </div>  
+    <article id="quiz_body">
+      <img src="Copilot_20260610_144020.png">
+      <p id="quiz-title">WM 2026 Quiz</p>
+        <div id="box_container">
+          <div id="quiz_info_box"><i data-lucide="map-pin"></i><p>Gastgeber:</p><p>USA, Mexiko, Kanada</p></div>
+          <div id="quiz_info_box"><i data-lucide="users"></i>48 Teams</div>
+          <div id="quiz_info_box"><i data-lucide="calendar"></i><p>104 Spiele</p></div>
+        </div>
+        <button id="start_quiz" >Quiz starten</button>
+      </article> 
         <script src="script.js"></script>
+        <script type="module" src="index.js"></script>
+        <script src="scripts/quiz_tab_slider.js"></script>
     </body>
 </html>  
 
