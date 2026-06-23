@@ -187,7 +187,7 @@ h2{
     grid-row: 2/10;
 }
 
-/* Spielplan*/
+/* Spielplan */
 
 .gameplan-body{
     width: 100vw;
@@ -301,6 +301,9 @@ h2{
     width: 90vw;
     background-color: #dadada;;
 }
+
+/* Spieldetail */
+
 
 .homeBody {
     grid-column: 1/4;

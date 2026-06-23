@@ -49,14 +49,14 @@ async function getData() {
 function createSpielÜbersicht(match){
 
    let homeScore = match.homeScore != null ? match.homeScore : "-";
-   let awayScore = match.homeScore != null ? match.homeScore : "-";
+   let awayScore = match.homeScore != null ? match.awayScore : "-";
 
    let homeFlag = match.homeTeam != null ? match.homeTeam : "placeholder";
    let awayFlag = match.awayTeam != null ? match.awayTeam : "placeholder";
 
 
    return `
-   <div class="game-overview">
+   <div class="game-overview" id="${match.matchNo-1}">
 
          <h2 class="team-name game-team-home">${match.homeRef}</h2>
          <h2 class="team-name game-team-away">${match.awayRef}</h2>
@@ -119,7 +119,12 @@ function createGroup(group, groups, main){
       }
    });
 
+
       main.appendChild(groupElement);
+      
+      Array.from(document.getElementsByClassName("game-overview"))
+      .forEach((e)=> {e.addEventListener("click", () => viewDetails(e.id))})
+
    return groupElement;
 }
 
@@ -128,6 +133,11 @@ function changeGroup(name,currentGroup, groups, main){
    currentGroup = createGroup(name,groups,main);
 
    return currentGroup;
+}
+
+function viewDetails(id){
+   localStorage.setItem("current_game_id", id);
+   location.href = "Spieldetails.html";
 }
 
 async function main() {
