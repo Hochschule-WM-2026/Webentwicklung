@@ -1,3 +1,4 @@
+// Deklaration von Variablen
 const btn_start = document.getElementById("start_quiz");
 const body = document.getElementById("quiz_body");
 
@@ -10,7 +11,7 @@ const questions = [
   {
     frage:"Wer ist der stärkste Fussballspieler der Welt?",
     antwort:["CR7","Messi","Mbappe","Lamine Yamal"],
-    correct: 2   // <-- corrigé ici
+    correct: 2   
   },
   {
     frage: "Wie viele Spieler hat eine Fußballmannschaft auf dem Feld?",
@@ -63,7 +64,9 @@ btn_start.addEventListener("click", () => {
   body.innerHTML = `
     <div id="frage"></div>
     <div id="slider"><div id="load"></div></div>
-    <div id="antworten"></div>
+    <div id="antworten">
+    
+    </div>
   `;
   showQuestion();
 });
@@ -78,10 +81,10 @@ function showQuestion() {
   }
 
   const q = questions[index];
-  document.getElementById("frage").textContent = q.frage;
+  document.getElementById("frage").textContent = q.frage; // Frage Lücke beffülen
 
   const antwortenDiv = document.getElementById("antworten");
-  antwortenDiv.innerHTML = "";
+  antwortenDiv.innerHTML = "";  // vershiedene Antworten erstmal entleeren.
 
   const ld = document.getElementById("load");
   let yx = 0;
@@ -122,12 +125,14 @@ function checkAnswer(i, btn) {
   if (i === questions[index].correct) {
     btn.style.background = "green";
     score++;
+    
   } else {
     btn.style.background = "red";
+     
   }
 
   setTimeout(() => {
     index++;
     showQuestion();
-  }, 600);
-}
+  }, 400);
+} 

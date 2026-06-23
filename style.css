@@ -564,7 +564,7 @@ h2{
     backdrop-filter: blur(8px);
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
- img{
+ #img_quiz{
     background-image: url("Copilot_20260610_144020");
     height: 200px;
     width: 200px;
