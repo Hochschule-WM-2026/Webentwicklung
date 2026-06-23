@@ -6,7 +6,7 @@ const drawer_close_button = document.getElementById("drawer_close_button");
 const spielplanDiscover = document.getElementById("spielplanDiscover");
 
 function openDrawer() {
-    document.getElementById("drawer").classList.add("open");
+    document.getElementById("drawer").classList.add("open"); 
     document.getElementById("overlay").classList.add("show");
 }
 
@@ -38,6 +38,6 @@ menus.forEach(element => {
 drawer_button.addEventListener("click", openDrawer);
 overlay.addEventListener("click", closeDrawer);
 drawer_close_button.addEventListener("click", closeDrawer);
-spielplanDiscover.addEventListener("click", () => navigate("/Spielplan.html"));
+//spielplanDiscover.addEventListener("click", () => navigate("/Spielplan.html"));
 
 }
