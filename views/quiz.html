@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark"> <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WM 2026 - Quiz</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/scripts/color_scheme.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="hauptSeite">
+
+  <main class="naechsteSpieleBox quizKarte">
+    
+    <div id="startScreen" class="startBildschirm">
+      <div class="quizIconBox">
+        <i data-lucide="help-circle"></i>
+      </div>
+      <h2 class="quizTitel quizTitelGross">Bist du bereit für das WM-Quiz?</h2>
+      <p class="quizText quizTextMitte">
+        Teste dein Wissen über die Fußball-Weltmeisterschaften. Du hast pro Frage 15 Sekunden Zeit!
+      </p>
+      <button id="startBtn" class="quizKnopf quizKnopfAuto">
+        <span>Quiz starten</span>
+        <i data-lucide="play"></i>
+      </button>
+    </div>
+
+    <div id="gameScreen" class="versteckt">
+      <div class="quizKopfInfo">
+        <span id="questionCounter">Frage 1 von 5</span>
+        <span id="timerText">15s</span>
+      </div>
+      
+      <div class="timerBox">
+        <div id="timerBar" class="timerLeiste"></div>
+      </div>
+
+      <h3 id="questionText" class="frageText">Lädt Frage...</h3>
+
+      <div id="answersGrid" class="antwortenBox">
+        </div>
+    </div>
+
+    <div id="resultScreen" class="ergebnisBildschirm versteckt">
+      <div class="quizIconBox">
+        <i data-lucide="award"></i>
+      </div>
+      <h2 class="quizTitel quizTitelGross">Quiz beendet!</h2>
+      <p class="quizText">Dein Ergebnis:</p>
+      <div id="finalScore" class="punkteHervorgehoben">0 / 5</div>
+      <p id="resultFeedback" class="quizText quizRueckmeldung"></p>
+      <button id="restartBtn" class="quizKnopf quizKnopfAuto">
+        <span>Nochmal spielen</span>
+        <i data-lucide="rotate-ccw"></i>
+      </button>
+    </div>
+
+  </main>
+
+  <script src="/scripts/drawer.js"></script>
+  <script src="/scripts/components.js"></script>
+  <script src="/scripts/quiz.js"></script>
+</body>
+</html>

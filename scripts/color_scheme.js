@@ -1,5 +1,3 @@
-//Ist für Light- und DarkMode
-
 function setTheme(x) {
     document.documentElement.dataset.theme =
     x.matches ? "dark" : "light";

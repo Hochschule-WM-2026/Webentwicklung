@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WM - 2026</title>
-    <link rel="stylesheet" href="style.css">
 
-    <script src="scripts/color_scheme.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WM 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="scripts/color_scheme.js"></script>
+  <script src="scripts/data.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
-   <div id="header"></div> 
-   <div class="homeBody">
-    <div>
-        <h2>FIFA WORLD CUP</h2>
-        <h1>2026</h1>
-        <h3>
-            <p style="color: red">CANADA</p>
-            <p>&nbsp;|&nbsp;USA&nbsp;|&nbsp;</p>
-            <p style="color: green;">MEXICO</p>
-        </h3>
-        <ul>
-            <p class="home_alt">THREE NATIONS.</p>
-            <p>ONE WORLD.</p>
-        </ul>        
+
+<body class="hauptSeite">
+
+  <section class="naechsteSpieleAbschnitt">
+    <h3 class="abschnittTitel">Nächste Spiele</h3>
+
+    <div class="naechsteSpieleBox" id="naechsteSpieleListe">
+      <p class="infoSpielText">Spiele werden geladen...</p>
     </div>
-        <button id="spielplanDiscover">Check the Tables &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i data-lucide="chevron-right"></i></button>
-   </div>
-   <footer class="homeFooter">
-        <div>
-            <i class="homeFooterIcons" data-lucide="Building2"></i>
-            <h3>16</h3>
-            <p>Host Cities</p>
-        </div>
-        <div class="HomeTeamsView">
-            <i class="homeFooterIcons" data-lucide="users"></i>
-            <h3>48</h3>
-            <p>Teams</p>
-        </div>
-        <div>
-            <i class="homeFooterIcons" data-lucide="CalendarDays"></i>
-            <h3>104</h3>
-            <p>Matches</p>
-        </div>
-        
-   </footer>
-   <script type="module" src="index.js"></script>
+  </section>
+
+  <section class="gruppenAbschnitt">
+    <h3 class="abschnittTitel">Alle Gruppen der WM</h3>
+    
+    <div class="sliderBox">
+      <div class="gruppenBox" id="gruppenListe">
+      </div>
+    </div>
+  </section>
+
+  <section class="quizAbschnitt">
+    <div class="quizBox">
+      <div class="quizInhalt">
+        <h3 class="quizTitel">Bist du ein echter Fußball-Experte?</h3>
+        <p class="quizText">Testen dein Wissen rund um die Weltmeisterschaft im großen Tipp- und Wissensquiz!</p>
+      </div>
+      <a href="/views/quiz.html" class="quizKnopf">
+        <span>Löse jetzt das WM Quiz</span>
+        <i data-lucide="arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+</section>
+
+  <script src="scripts/drawer.js"></script>
+  <script src="scripts/components.js"></script>
+  <script type="module" src="index.js"></script>
 </body>
-</html>  
+</html>
