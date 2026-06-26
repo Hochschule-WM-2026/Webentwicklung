@@ -292,7 +292,7 @@ header {
   border-top: none;
 }
 
-.spielZeit {
+.spielZeit, .spielOrt{
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-secondary);
@@ -312,6 +312,9 @@ header {
   gap: 12px;
   flex: 1;
   padding: 10px;
+
+  max-width: 42%;
+
   border-radius: var(--radius-sm);
   background: var(--accent-light);
 }
@@ -328,6 +331,8 @@ header {
   font-size: 0.85rem;
   font-weight: 600;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .teamFlagge {
@@ -592,6 +597,8 @@ header {
   background: var(--background);
   font-size: 0.85rem;
   transition: opacity 0.2s;
+
+  gap: 10px;
 }
 
 .miniSpiel.beendet {
@@ -1000,8 +1007,7 @@ header {
   }
 
   .positionBlock {
-    margin-bottom: 0;
-  }
+  margin-bottom: 20px;  }
 }
 
 /* Home - Spiele und Gruppen nebeneinander auf größeren Screens */
@@ -1075,9 +1081,10 @@ header {
     font-size: 1.2rem;
   }
 
-  .spielZeit {
+  .spielZeit, .spielOrt{
     font-size: 1.1rem;
   }
+
 
   .spielVs {
     font-size: 1.1rem;
@@ -1196,7 +1203,7 @@ header {
     font-size: 1.4rem;
   }
 
-  .spielZeit {
+  .spielZeit, .spielOrt{
     font-size: 1.3rem;
   }
 
