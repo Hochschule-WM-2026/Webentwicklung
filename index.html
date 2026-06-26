@@ -4,17 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Ganze WM im Ünerlick. Alle Spiele atuele Spielstände! Detaillierte Spieler übresicht mit einem Spanendem Quiz">
   <title>WM 2026</title>
+
+  <!--Socialmedia -->
+  <meta property="og:title" content="WM Spielstände, Spielplan und Interaktives Quiz">
+  <meta property="og:description" content="Alle Spiele der WM im Überblick! Erfahre aktuelle Spielstände in Echtzeit, spannende Spielerinfos &amp; teste dein Wissen im WM-Quiz.">
+  <meta property="og:image" content="./Images/Preview_Picture.png">
+  <meta property="og:url" content="143.93.245.165/project/cecilturtle/index.html">
+  <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="./Images/favicon.svg">
+
   <script src="scripts/color_scheme.js"></script>
   <script src="scripts/data.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
+<!--Quellen-->
+<!--Flaggen svgs https://github.com/hampusborgos/country-flags/blob/main/svg/bs.svg-->
+<!--Plazhalter Flagge https://www.iconpacks.net/free-icon/gray-shield-25854.html-->
+<!--API für Spiele https://api.zafronix.com-->
+<!--JSON Daten für Spieler Kader https://github.com/openfootball/worldcup.json/blob/master/2026/worldcup.squads.json-->
+<!--Icon Paket https://lucide.dev/icons/-->
+<!--WM Logo Favicon https://de.wikipedia.org/wiki/Datei:2026_FIFA_World_Cup_emblem_(without_trophy).svg-->
+<!--Social Media Picture https://4kwallpapers.com/fifa-world-cup-2026-wallpapers/#google_vignette-->
+
 <body class="hauptSeite">
 
   <section class="naechsteSpieleAbschnitt">
-    <h3 class="abschnittTitel">Nächste Spiele</h3>
+    <h1 class="abschnittTitel">Nächste Spiele</h1>
 
     <div class="naechsteSpieleBox" id="naechsteSpieleListe">
       <p class="infoSpielText">Spiele werden geladen...</p>
@@ -22,7 +43,7 @@
   </section>
 
   <section class="gruppenAbschnitt">
-    <h3 class="abschnittTitel">Alle Gruppen der WM</h3>
+    <h2 class="abschnittTitel">Alle Gruppen der WM</h2>
     
     <div class="sliderBox">
       <div class="gruppenBox" id="gruppenListe">
@@ -43,7 +64,6 @@
     </div>
   </section>
 
-</section>
 
   <script src="scripts/drawer.js"></script>
   <script src="scripts/components.js"></script>

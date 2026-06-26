@@ -1,12 +1,12 @@
 async function getMatchData() {
-  const matches = localStorage.getItem("matches");
-  if (matches) {
-    try {
-      return JSON.parse(matches);
-    } catch {
-      return null;
-    }
-  } else {
+  localStorage.setItem("matchDataAge", Date.now());
+  const matchDataAge = localStorage.getItem("matchDataAge");
+
+  //                 Hours Minutes Seconds
+  const fourHours = 4 * 60 * 60 * 1000; // in Miliseconds  
+
+  if((Date.now() - matchDataAge) > fourHours){
+    localStorage.setItem(matchDataAge, Date.now())
     try {
       const response = await fetch(
         "https://api.zafronix.com/fifa/worldcup/v1/matches?year=2026",
@@ -22,11 +22,19 @@ async function getMatchData() {
       const data = JSON.parse(text);
       localStorage.setItem("matches", JSON.stringify(data));
       return data;
-    } catch (error) {
-      console.error("Error:", error);
-      return null;
+    }
+    catch{
+      //If API answer isnt Correct load old data Anyways
+      const matches = localStorage.getItem("matches");
+      return JSON.parse(matches);
     }
   }
+  else{
+    const matches = localStorage.getItem("matches");
+    return JSON.parse(matches);
+  }
+
+  
 }
 async function renderNextTwoDays() {
   const apiResponse = await getMatchData();
@@ -113,38 +121,9 @@ async function renderNextTwoDays() {
     container.appendChild(infoText);
   }
 }
-async function getTableData() {
-  const matches = localStorage.getItem("matches");
-  if (matches) {
-    try {
-      return JSON.parse(matches);
-    } catch {
-      return null;
-    }
-  } else {
-    try {
-      const response = await fetch(
-        "https://api.zafronix.com/fifa/worldcup/v1/matches?year=2026",
-        {
-          headers: {
-            "X-API-Key": "zwc_free_2af917931ea3e6ce42e9dce8"
-          }
-        }
-      );
 
-      if (!response.ok) throw new Error("API-Fehler");
-      const text = await response.text();
-      const data = JSON.parse(text);
-      localStorage.setItem("matches", JSON.stringify(data));
-      return data;
-    } catch (error) {
-      console.error("Error:", error);
-      return null;
-    }
-  }
-}
 async function renderGroups() {
-  const apiResponse = await getTableData();
+  const apiResponse = await getMatchData();
   if (!apiResponse) return;
 
   const allMatches = Array.isArray(apiResponse) ? apiResponse : apiResponse.data || [];
@@ -164,37 +143,38 @@ async function renderGroups() {
     const away = match.awayTeam;
 
     if (home && !groups[groupLetter][home]) {
-      groups[groupLetter][home] = { name: home, sp: 0, s: 0, u: 0, n: 0, tore: 0, gegentore: 0, diff: 0, punkte: 0 };
+      groups[groupLetter][home] = { name: home, games: 0, wins: 0, draw: 0, loses: 0, goals: 0, goalsAgainst: 0, diff: 0, points: 0 };
     }
     if (away && !groups[groupLetter][away]) {
-      groups[groupLetter][away] = { name: away, sp: 0, s: 0, u: 0, n: 0, tore: 0, gegentore: 0, diff: 0, punkte: 0 };
+      groups[groupLetter][away] = { name: away, games: 0, wins: 0, draws: 0, loses: 0, goals: 0, goalsAgainst: 0, diff: 0, points: 0 };
     }
-
+    
+    //Ausrechenen Der Wm Punkte 
     if (match.status === "finished" && match.homeScore !== null && match.awayScore !== null) {
-      const hs = parseInt(match.homeScore);
-      const as = parseInt(match.awayScore);
+      const homesScore = parseInt(match.homeScore);
+      const awayScore = parseInt(match.awayScore);
 
-      groups[groupLetter][home].sp += 1;
-      groups[groupLetter][away].sp += 1;
+      groups[groupLetter][home].games += 1;
+      groups[groupLetter][away].games += 1;
 
-      groups[groupLetter][home].tore += hs;
-      groups[groupLetter][home].gegentore += as;
-      groups[groupLetter][away].tore += as;
-      groups[groupLetter][away].gegentore += hs;
+      groups[groupLetter][home].goals += homesScore;
+      groups[groupLetter][home].goalsAgainst += awayScore;
+      groups[groupLetter][away].goals += awayScore;
+      groups[groupLetter][away].goalsAgainst += homesScore;
 
-      if (hs > as) {
-        groups[groupLetter][home].s += 1;
-        groups[groupLetter][home].punkte += 3;
-        groups[groupLetter][away].n += 1;
-      } else if (hs < as) {
-        groups[groupLetter][away].s += 1;
-        groups[groupLetter][away].punkte += 3;
-        groups[groupLetter][home].n += 1;
+      if (homesScore > awayScore) {
+        groups[groupLetter][home].wins += 1;
+        groups[groupLetter][home].points += 3;
+        groups[groupLetter][away].loses += 1;
+      } else if (homesScore < awayScore) {
+        groups[groupLetter][away].wins += 1;
+        groups[groupLetter][away].points += 3;
+        groups[groupLetter][home].loses += 1;
       } else {
-        groups[groupLetter][home].u += 1;
-        groups[groupLetter][home].punkte += 1;
-        groups[groupLetter][away].u += 1;
-        groups[groupLetter][away].punkte += 1;
+        groups[groupLetter][home].draws += 1;
+        groups[groupLetter][home].points += 1;
+        groups[groupLetter][away].draws += 1;
+        groups[groupLetter][away].points += 1;
       }
     }
   });
