@@ -74,7 +74,7 @@ async function renderAllTablesAndMatches() {
         <tr>
           <td>${index + 1}</td>
           <td class="teamZelle">
-            <img class="teamFlagge" src="/flags/${team.name}.svg" alt="${team.name}">
+            <img class="teamFlagge" src="./flags/${team.name}.svg" alt="${team.name}">
             <span>${team.name}</span>
           </td>
           <td>${team.diff >= 0 ? "+" + team.diff : team.diff}</td>
@@ -96,11 +96,11 @@ async function renderAllTablesAndMatches() {
         <div class="miniSpiel ${isFinished ? 'beendet' : 'kommt'}">
           <div class="miniTeam miniTeamHeim">
             <span>${match.homeTeam}</span>
-            <img class="teamFlagge miniFlagge" src="/flags/${match.homeTeam}.svg" alt="">
+            <img class="teamFlagge miniFlagge" src="./flags/${match.homeTeam}.svg" alt="">
           </div>
           <div class="miniErgebnis">${scoreDisplay}</div>
           <div class="miniTeam miniTeamGast">
-            <img class="teamFlagge miniFlagge" src="/flags/${match.awayTeam}.svg" alt="">
+            <img class="teamFlagge miniFlagge" src="./flags/${match.awayTeam}.svg" alt="">
             <span>${match.awayTeam}</span>
           </div>
         </div>

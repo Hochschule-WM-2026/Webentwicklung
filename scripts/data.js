@@ -93,11 +93,11 @@ async function renderNextTwoDays() {
       <div class="spielPaarung">
         <div class="spielTeam spielTeamHeim">
           <span class="teamName">${homeName}</span>
-          <img class="teamFlagge" src="../flags/${homeName}.svg" alt="${homeName}">
+          <img class="teamFlagge" src="./flags/${homeName}.svg" alt="${homeName}">
         </div>
         <span class="spielVs">vs</span>
         <div class="spielTeam spielTeamGast">
-          <img class="teamFlagge" src="../flags/${awayName}.svg" alt="${awayName}">
+          <img class="teamFlagge" src="./flags/${awayName}.svg" alt="${awayName}">
           <span class="teamName">${awayName}</span>
         </div>
       </div>
@@ -110,7 +110,7 @@ async function renderNextTwoDays() {
     const infoText = document.createElement("p");
     infoText.className = "infoSpielText";
     infoText.textContent = `+ ${remainingCount} weitere Spiele anzeigen`;
-    infoText.addEventListener("click",() => {window.location.href = "/views/spielplan.html";})
+    infoText.addEventListener("click",() => {window.location.href = "./spielplan.html";})
     container.appendChild(infoText);
   }
 }
@@ -228,7 +228,7 @@ async function renderGroups() {
         <tr>
           <td>${index + 1}</td>
           <td class="teamZelle">
-            <img class="teamFlagge" src="flags/${team.name}.svg" alt="${team.name}">
+            <img class="teamFlagge" src="./flags/${team.name}.svg" alt="${team.name}">
             <span>${team.name}</span>
           </td>
           <td>${team.diff >= 0 ? "+" + team.diff : team.diff}</td>

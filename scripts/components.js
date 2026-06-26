@@ -1,10 +1,10 @@
 async function includeComponents() {
   try {
-    const headerResponse = await fetch('/components/header.html');
+    const headerResponse = await fetch('./components/header.html');
     const headerContent = await headerResponse.text();
     document.body.insertAdjacentHTML('afterbegin', headerContent);
 
-    const footerResponse = await fetch('/components/footer.html');
+    const footerResponse = await fetch('./components/footer.html');
     const footerContent = await footerResponse.text();
     document.body.insertAdjacentHTML('beforeend', footerContent);
 
@@ -34,7 +34,7 @@ async function includeComponents() {
         const normalizedHref = href.replace(/^\//, '');
         const normalizedPath = currentPath.replace(/^\//, '');
 
-        if ((currentPath === '/' || currentPath.endsWith('/index.html') || currentPath === '/index.html') && href === '/') {
+        if ((currentPath === './' || currentPath.endsWith('./index.html') || currentPath === './index.html') && href === '/') {
           link.classList.add('aktiv');
           localStorage.setItem('aktiverTab', href);
         } else if (normalizedPath === normalizedHref || normalizedPath.endsWith('/' + normalizedHref)) {

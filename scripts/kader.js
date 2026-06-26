@@ -9,7 +9,7 @@ const posOrder = ["GK", "DF", "MF", "FW"];
 
 async function loadKaderData() {
   try {
-    const response = await fetch('/json/worldcup.squads.json');
+    const response = await fetch('./json/worldcup.squads.json');
     kaderData = await response.json();
     loadTeams();
   } catch (error) {
@@ -54,7 +54,7 @@ function updateFlagAndKader(teamName) {
   const flagImg = document.getElementById("flaggenBild");
   
   if (team && team.fifa_code) {
-    flagImg.src = `/flags/${teamName}.svg`;
+    flagImg.src = `./flags/${teamName}.svg`;
     flagImg.style.display = "block";
   } else {
     flagImg.style.display = "none";

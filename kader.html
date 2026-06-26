@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="WM 2026 Kader Aller Länder Aktuelle Spiler Infos">
+  <title>WM 2026 Team-Kadar</title>
+
+  <!--Socialmedia -->
+  <meta property="og:title" content="WM Spielstände, Spielplan und Interaktives Quiz">
+  <meta property="og:description" content="WM 2026 Kader Aller Länder Aktuelle Spiler Infos">
+  <meta property="og:image" content="./Images/Preview_Picture.png">
+  <meta property="og:url" content="143.93.245.165/project/cecilturtle/index.html">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/x-icon" href="./Images/favicon.svg">
+
+  <script src="./scripts/color_scheme.js"></script>
+  <script src="./scripts/data.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="hauptSeite">
+
+  <section class="kaderAbschnitt">
+    <h1 class="abschnittTitel">Spielerinformationen</h1>
+
+    
+    <div class="teamAuswahlBox">
+      <!--                            Plazthalter für Flagge falls Java Script Nicht Lädt-->
+      <img id="flaggenBild" class="flaggenBild" src="./flags/Placeholder.svg" alt="Flagge">
+      <select id="teamAuswahl" class="teamDropdown">
+        <option value="">Länder werden geladen...</option>
+      </select>
+    </div>
+
+    <div id="kaderInhalt"></div>
+  </section>
+
+  <script src="./scripts/drawer.js"></script>
+  <script src="./scripts/components.js"></script>
+  <script src="./scripts/kader.js"></script>
+</body>
+</html>
